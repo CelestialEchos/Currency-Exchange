@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Chatgpt api</title>
+</head>
+
+<body>
+    <h1>Currency Exchange💰</h1>
+    <form action="/post" id="form" method="POST">
+        <p>FROM:</p>
+        <select name="from">
+            <option value="JPY" <%=locals.option1==='JPY' ? 'selected' : '' %>>JPY</option>
+            <option value="CNY" <%=locals.option1==='CNY' ? 'selected' : '' %>>CNY</option>
+            <option value="USD" <%=locals.option1==='USD' ? 'selected' : '' %>>USD</option>
+        </select>
+        <input type="number" min="0" max="1000000000000" step="0.01" required="required" id="amount" name="amount"
+            value="<%= locals.amount %>" />
+        <button type="submit">Convert</button>
+        </br>
+        <p>TO:</p>
+        <select name="to">
+            <option value="JPY" <%=locals.option2==='JPY' ? 'selected' : '' %>>JPY</option>
+            <option value="CNY" <%=locals.option2==='CNY' ? 'selected' : '' %>>CNY</option>
+            <option value="USD" <%=locals.option2==='USD' ? 'selected' : '' %>>USD</option>
+        </select>
+        <input type="text" value="<%= locals.outcomes %>" class="field left" readonly>
+    </form>
+</body>
+
+</html>
